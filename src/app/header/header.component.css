@@ -1,0 +1,9 @@
+.my-logo {
+  font-family: 'Questrial', sans-serif;
+}
+
+.nav-pills .nav-link.active {
+    color: #dc3545!important;
+    background-color: #fff;
+    font-weight: bold;
+}

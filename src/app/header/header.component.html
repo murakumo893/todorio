@@ -1,0 +1,19 @@
+<div class="bg-danger text-white p-2">
+  <div class="d-flex">
+    <div class="flex-fill">
+      <h1 class="my-logo font-weight-bold">Todorio</h1>
+    </div>
+    <div class="flex-fill text-right">
+      <span>{{ user.name }}</span><br/>
+      <span>LEVEL : {{ user.level }}</span>
+    </div>
+  </div>
+  <ul class="nav nav-pills">
+    <li class="nav-item border-light">
+      <a class="nav-link text-white active" (click)="activate($event)" ng-class="{active:topNav}" routerLink="/top">TOP</a>
+    </li>
+    <li class="nav-item border-light">
+      <a class="nav-link text-white" (click)="activate($event)" ng-class="{active:tasksNav}" routerLink="/tasks">TASKS</a>
+    </li>
+  </ul>
+</div>
