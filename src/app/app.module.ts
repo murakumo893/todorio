@@ -15,6 +15,9 @@ import { UserService } from './user.service';
 import { FooterComponent } from './footer/footer.component';
 import { TopComponent } from './top/top.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { AddComponent } from './add/add.component';
+import { ListComponent } from './list/list.component';
+import { TasksService } from './tasks.service';
 
 @NgModule({
   imports:      [
@@ -26,7 +29,8 @@ import { TasksComponent } from './tasks/tasks.component';
       InMemoryDataService, {dataEncapsulation: false}
     )
   ],
-  declarations: [ AppComponent, HelloComponent, HeaderComponent, FooterComponent, TopComponent, TasksComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [ AppComponent, HelloComponent, HeaderComponent, FooterComponent, TopComponent, TasksComponent, AddComponent, ListComponent ],
+  bootstrap:    [ AppComponent ],
+  providers: [TasksService]
 })
 export class AppModule { }

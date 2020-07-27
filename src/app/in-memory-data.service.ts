@@ -9,8 +9,11 @@ import { User } from './user';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const tasks = [
-      { id: 11, title: 'カレーをつくる', memo: 'ルーを買うのを忘れない' },
-      { id: 12, title: 'ネコに餌をやる', memo: '水も換えておく' }
+      { id: 11, title: 'カレーをつくる', memo: 'ルーを買うのを忘れない', completed:false },
+      { id: 12, title: 'ネコに餌をやる', memo: '水も換えておく', completed:false },
+      { id: 14, title: 'サーモンを買う', memo: '', completed:false },
+      { id: 15, title: 'メールの返信', memo: '日曜日までにやる', completed:true },
+      { id: 16, title: '集合時間を連絡しておく', memo: 'Aさん、Bさん、Cさん', completed:true }
     ];
     const users = [
       { id:1, name: 'murakumo', level:5 }

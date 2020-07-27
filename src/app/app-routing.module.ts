@@ -5,7 +5,7 @@ import { TopComponent } from './top/top.component'
 import { TasksComponent } from './tasks/tasks.component'
 
 const routes: Routes = [
-  { path: '', redirectTo: '/top', pathMatch: 'full' },
+  { path: '', redirectTo: '/tasks', pathMatch: 'full' },
   { path: 'top', component: TopComponent},
   { path: 'tasks', component: TasksComponent}
 ];
