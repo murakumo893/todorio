@@ -3,7 +3,7 @@
     <div class="flex-fill">
       <h1 class="my-logo font-weight-bold">Todorio</h1>
     </div>
-    <div class="flex-fill text-right">
+    <!-- <div class="flex-fill text-right"> -->
       <!-- JavascriptはPromiseやObservableなどを使うことが頻繁にあるので、
       サーバーからデータを取得するのを待っていると全体を表示するまでに時間がかかってしまうことが
       あります。
@@ -13,9 +13,16 @@
       なので「?」マークを使ってエラーを起こさないようにしてあげればデータを取得できたタイミングで
       データバインディングで正常に表示できるって訳です -->
       <!-- https://masahiro.me/2019/03/post-2177/ -->
-      <span>{{ user?.name }}</span><br/>
+      <!-- <span>{{ user?.name }}</span><br/>
       <span>LEVEL : {{ user?.level }}</span>
-    </div>
+    </div> -->
+<div class="media">
+  <i class="d-flex ml-3 mr-3 fas fa-user fa-3x"></i>
+  <div class="media-body">
+    <span class="font-weight-bold">{{ user?.name }}</span><br/>
+    <span>LEVEL : <span class="font-weight-bold">{{ user?.level }}</span></span>
+  </div>
+</div>
   </div>
   <ul class="nav nav-pills">
     <li *ngFor="let route of routes" class="nav-item border-light">
