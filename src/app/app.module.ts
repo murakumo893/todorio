@@ -9,15 +9,13 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
 import { HeaderComponent } from './header/header.component';
 import { UserService } from './user.service';
 import { FooterComponent } from './footer/footer.component';
 import { TopComponent } from './top/top.component';
 import { TasksComponent } from './tasks/tasks.component';
-import { AddComponent } from './add/add.component';
-import { ListComponent } from './list/list.component';
 import { TasksService } from './tasks.service';
+import { ValueSharedService } from './value-shared.service';
 
 @NgModule({
   imports:      [
@@ -29,8 +27,8 @@ import { TasksService } from './tasks.service';
       InMemoryDataService, {dataEncapsulation: false}
     )
   ],
-  declarations: [ AppComponent, HelloComponent, HeaderComponent, FooterComponent, TopComponent, TasksComponent, AddComponent, ListComponent ],
+  declarations: [ AppComponent, HeaderComponent, FooterComponent, TopComponent, TasksComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [TasksService]
+  providers: [TasksService, ValueSharedService]
 })
 export class AppModule { }

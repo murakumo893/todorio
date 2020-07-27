@@ -1,2 +1,37 @@
-<app-add></app-add>
-<app-list></app-list>
+<h2 class="my-header">Add Task</h2>
+<form>
+  <div class="form-group row">
+    <label for="title" class="col-sm-2 col-form-label">Title</label>
+    <div class="col-sm-10">
+      <input #title type="text" class="form-control" id="title" placeholder="Title">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="memo" class="col-sm-2 col-form-label">Memo</label>
+    <div class="col-sm-10">
+      <input #memo type="text" class="form-control" id="memo" placeholder="Memo">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10 offset-sm-2">
+      <button (click)="addTask(title.value, memo.value)" class="btn btn-danger">Add</button>
+    </div>
+  </div>
+</form>
+
+<h2 class="my-header">Task List</h2>
+<ul class="list-group">
+  <li class="list-group-item d-flex align-items-center" *ngFor="let task of tasks">
+    <i
+      class="pointer far fa-check-square fa-2x"
+      [ngClass]="{'text-success': task.completed, 'text-secondary': !task.completed}"
+      (click)="switchCompleteStatus(task)"
+      ></i>
+    <span class="pl-3 flex-grow-1">{{task.title}}</span>
+    <i
+      class="text-danger pointer fas fa-times-circle fa-2x"
+      (click)="deleteTask(task)"
+      ></i>
+  </li>
+  
+</ul>

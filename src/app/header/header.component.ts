@@ -4,6 +4,7 @@ import { User } from '../user'
 import { Nav } from '../nav'
 import { Router } from '@angular/router';
 import { CONSTANTS } from '../constants'
+import { ValueSharedService } from '../value-shared.service';
 
 @Component({
   selector: 'app-header',
@@ -20,7 +21,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private userService: UserService,
     private router: Router,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private valueShared: ValueSharedService
   ) { }
 
   ngOnInit() {
@@ -39,6 +41,7 @@ export class HeaderComponent implements OnInit {
     // 期待したパスを取れないのでこうしている
     this.addActivateClass(this.router.url)
     this.cd.detectChanges()
+    this.valueShared.user = this.user
   }
 
   // ユーザー情報を取得
