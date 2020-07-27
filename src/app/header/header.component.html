@@ -4,16 +4,26 @@
       <h1 class="my-logo font-weight-bold">Todorio</h1>
     </div>
     <div class="flex-fill text-right">
-      <span>{{ user.name }}</span><br/>
-      <span>LEVEL : {{ user.level }}</span>
+      <!-- JavascriptはPromiseやObservableなどを使うことが頻繁にあるので、
+      サーバーからデータを取得するのを待っていると全体を表示するまでに時間がかかってしまうことが
+      あります。
+
+      そのとき問題になるので、データを取得していないにも関わらず「データを表示する」
+      という指示を与えていることです
+      なので「?」マークを使ってエラーを起こさないようにしてあげればデータを取得できたタイミングで
+      データバインディングで正常に表示できるって訳です -->
+      <!-- https://masahiro.me/2019/03/post-2177/ -->
+      <span>{{ user?.name }}</span><br/>
+      <span>LEVEL : {{ user?.level }}</span>
     </div>
   </div>
   <ul class="nav nav-pills">
-    <li class="nav-item border-light">
-      <a class="nav-link text-white active" (click)="activate($event)" ng-class="{active:topNav}" routerLink="/top">TOP</a>
-    </li>
-    <li class="nav-item border-light">
-      <a class="nav-link text-white" (click)="activate($event)" ng-class="{active:tasksNav}" routerLink="/tasks">TASKS</a>
+    <li *ngFor="let route of routes" class="nav-item border-light">
+      <a
+        class="nav-link text-white"
+        (click)="activateOnClick($event)"
+        [ngClass]="{active:route.active}"
+        routerLink="{{route.path}}">{{route.name}}</a>
     </li>
   </ul>
 </div>
