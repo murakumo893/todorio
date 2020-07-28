@@ -45,7 +45,7 @@ export class TasksComponent implements OnInit {
   addTask(title:string, memo:string): void{
     title = title.trim()
     memo = memo.trim()
-    if (!title || !memo) {
+    if (!title) {
       return
     }
 

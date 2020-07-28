@@ -1,7 +1,7 @@
 <h2 class="my-header">Add Task</h2>
 <form>
   <div class="form-group row">
-    <label for="title" class="col-sm-2 col-form-label">Title</label>
+    <label for="title" class="col-sm-2 col-form-label">Title<span class="text-danger">*</span></label>
     <div class="col-sm-10">
       <input #title type="text" class="form-control" id="title" placeholder="Title">
     </div>
@@ -21,13 +21,16 @@
 
 <h2 class="my-header">Task List</h2>
 <ul class="list-group">
-  <li routerLink="/detail/{{task.id}}" role="button" class="list-group-item d-flex align-items-center" *ngFor="let task of tasks">
+  <li class="list-group-item d-flex align-items-center" *ngFor="let task of tasks">
     <i
       class="pointer far fa-check-square fa-2x"
       [ngClass]="{'text-success': task.completed, 'text-secondary': !task.completed}"
       (click)="switchCompleteStatus(task)"
       ></i>
-    <span class="pl-3 flex-grow-1">{{task.title}}</span>
+    <div class="pl-3 flex-grow-1" routerLink="/detail/{{task.id}}" role="button" >
+      <span>{{task.title}}</span>
+    </div>
+    
     <i
       class="text-danger pointer fas fa-times-circle fa-2x"
       (click)="deleteTask(task)"

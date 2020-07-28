@@ -5,3 +5,6 @@ h2.my-header {
   background: #fffaf4;/*背景色*/
   border-left: solid 5px #dc3545;/*左線（実線 太さ 色）*/
 }
+.pointer {
+  cursor:pointer
+}

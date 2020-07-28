@@ -20,13 +20,20 @@ export class TasksService {
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.taskUrl)
       .pipe(
-        tap(_ => console.log('fetched heroes'))
+        tap(_ => console.log('fetched tasks'))
+      );
+  }
+
+  getTask(id: number): Observable<Task> {
+    return this.http.get<Task>(`${this.taskUrl}/${id}`)
+      .pipe(
+        tap(_ => console.log('fetched task'))
       );
   }
 
   updateTask(task: Task): Observable<any> {
     return this.http.put(this.taskUrl, task, this.httpOptions).pipe(
-      tap(_ => console.log('task status updated'))
+      tap(_ => console.log('task updated'))
     )
   }
 
