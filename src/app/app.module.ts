@@ -11,7 +11,6 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { UserService } from './user.service';
-import { FooterComponent } from './footer/footer.component';
 import { TopComponent } from './top/top.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TasksService } from './tasks.service';
@@ -28,7 +27,7 @@ import { DetailComponent } from './detail/detail.component';
       InMemoryDataService, {dataEncapsulation: false}
     )
   ],
-  declarations: [ AppComponent, HeaderComponent, FooterComponent, TopComponent, TasksComponent, DetailComponent ],
+  declarations: [ AppComponent, HeaderComponent, TopComponent, TasksComponent, DetailComponent ],
   bootstrap:    [ AppComponent ],
   providers: [TasksService, ValueSharedService]
 })
