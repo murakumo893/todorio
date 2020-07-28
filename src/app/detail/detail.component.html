@@ -1,20 +1,24 @@
-<h2 class="my-header">Add Task</h2>
-<form>
+<h2 class="my-header">Task Detail</h2>
+<div [ngClass]="{'vhidden': !updated}" class="alert alert-success" role="alert">
+    Update Successed!
+</div>
+<form *ngIf="task !== undefined">
   <div class="form-group row">
     <label for="title" class="col-sm-2 col-form-label">Title<span class="text-danger">*</span></label>
     <div class="col-sm-10">
-      <input #title type="text" class="form-control" id="title" placeholder="Title">
+      <input [(ngModel)]="task.title" name="title" type="text" class="form-control" id="title" placeholder="Title">
     </div>
   </div>
   <div class="form-group row">
     <label for="memo" class="col-sm-2 col-form-label">Memo</label>
     <div class="col-sm-10">
-      <input #memo type="text" class="form-control" id="memo" placeholder="Memo">
+      <input [(ngModel)]="task.memo" name="memo" type="text" class="form-control" id="memo" placeholder="Memo">
     </div>
   </div>
   <div class="form-group row">
     <div class="col-sm-10 offset-sm-2">
-      <button (click)="updateTask()" class="btn btn-danger">Add</button>
+      <button (click)="updateTask()" class="btn btn-danger">Update</button>
     </div>
   </div>
 </form>
+<i (click)="goBack()" class="fas fa-backward"></i>

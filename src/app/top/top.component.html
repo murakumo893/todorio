@@ -1,9 +1,26 @@
 <h2 class="my-header">Player Status</h2>
-<div class="media">
-  <img class="d-flex align-self-center mr-3" src="/image/user.jpg" alt="Generic placeholder image">
-  <div class="media-body">
-    <h5 class="mt-0">{{ user?.name }}</h5>
-    <p>LEVEL : <strong>{{ user?.level }}</strong></p>
+<div class="d-flex media m-3">
+  <i class="flex-fill align-self-center ml-3 mr-3 fas fa-user fa-5x"></i>
+  <div class="flex-fill media-body">
+    <h2 class="mt-0 text-danger">{{ user?.name }}</h2>
+    <h3>LEVEL : <strong class="text-danger">{{ user?.level }}</strong></h3>
   </div>
 </div>
 <h2 class="my-header">Imcomplete Tasks</h2>
+<ul class="list-group">
+  <li class="list-group-item d-flex align-items-center" *ngFor="let task of tasks">
+    <i
+      class="pointer far fa-check-square fa-2x"
+      [ngClass]="{'text-success': task.completed, 'text-secondary': !task.completed}"
+      (click)="switchCompleteStatus(task)"
+      ></i>
+    <div class="pl-3 flex-grow-1" routerLink="/detail/{{task.id}}" role="button" >
+      <span>{{task.title}}</span>
+    </div>
+    
+    <i
+      class="text-danger pointer fas fa-times-circle fa-2x"
+      (click)="deleteTask(task)"
+      ></i>
+  </li>
+</ul>
