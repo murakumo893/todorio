@@ -1,0 +1,20 @@
+<h2 class="my-header">Add Task</h2>
+<form>
+  <div class="form-group row">
+    <label for="title" class="col-sm-2 col-form-label">Title<span class="text-danger">*</span></label>
+    <div class="col-sm-10">
+      <input #title type="text" class="form-control" id="title" placeholder="Title">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="memo" class="col-sm-2 col-form-label">Memo</label>
+    <div class="col-sm-10">
+      <input #memo type="text" class="form-control" id="memo" placeholder="Memo">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10 offset-sm-2">
+      <button (click)="updateTask()" class="btn btn-danger">Add</button>
+    </div>
+  </div>
+</form>
