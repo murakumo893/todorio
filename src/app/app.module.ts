@@ -16,6 +16,7 @@ import { TopComponent } from './top/top.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TasksService } from './tasks.service';
 import { ValueSharedService } from './value-shared.service';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   imports:      [
@@ -27,7 +28,7 @@ import { ValueSharedService } from './value-shared.service';
       InMemoryDataService, {dataEncapsulation: false}
     )
   ],
-  declarations: [ AppComponent, HeaderComponent, FooterComponent, TopComponent, TasksComponent ],
+  declarations: [ AppComponent, HeaderComponent, FooterComponent, TopComponent, TasksComponent, DetailComponent ],
   bootstrap:    [ AppComponent ],
   providers: [TasksService, ValueSharedService]
 })

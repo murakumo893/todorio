@@ -21,7 +21,7 @@
 
 <h2 class="my-header">Task List</h2>
 <ul class="list-group">
-  <li class="list-group-item d-flex align-items-center" *ngFor="let task of tasks">
+  <li routerLink="/detail/{{task.id}}" role="button" class="list-group-item d-flex align-items-center" *ngFor="let task of tasks">
     <i
       class="pointer far fa-check-square fa-2x"
       [ngClass]="{'text-success': task.completed, 'text-secondary': !task.completed}"
