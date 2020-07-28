@@ -41,12 +41,15 @@ export class HeaderComponent implements OnInit {
     // 期待したパスを取れないのでこうしている
     this.addActivateClass(this.router.url)
     this.cd.detectChanges()
-    this.valueShared.user = this.user
   }
 
   // ユーザー情報を取得
   getUser(): void {
-    this.userService.getUser().subscribe(user => this.user = user)
+    this.userService.getUser().subscribe(
+      user => {
+        this.user = user;
+        this.valueShared.user = this.user
+        })
   }
 
   // クリック時に現在ページのナビゲーションの色を変える

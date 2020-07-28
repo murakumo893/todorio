@@ -33,7 +33,7 @@ export class TasksService {
 
   updateTask(task: Task): Observable<any> {
     return this.http.put(this.taskUrl, task, this.httpOptions).pipe(
-      tap(_ => console.log('task updated'))
+      tap(_ => console.log('task status updated'))
     )
   }
 

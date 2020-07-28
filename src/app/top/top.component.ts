@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { ValueSharedService } from '../value-shared.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-top',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopComponent implements OnInit {
 
-  constructor() { }
+  // ログイン中のユーザー情報
+  user: User
+
+  constructor(
+    private valueShared: ValueSharedService,
+    private cd: ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewChecked() {
+    this.user = this.valueShared.user
+    this.cd.detectChanges()
   }
 
 }
